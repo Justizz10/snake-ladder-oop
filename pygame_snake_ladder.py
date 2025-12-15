@@ -119,7 +119,8 @@ class Game:
         self.dice = Dice()
         self.players = [
             Player("Player 1", BLUE),
-            Player("Player 2", RED)
+            Player("Player 2", RED),
+            Player("Player 3", ORANGE)
         ]
         self.current = 0
         self.move_queue = deque()
@@ -165,7 +166,7 @@ class Game:
         SCREEN.fill(BG)
         self.board.draw(SCREEN)
 
-        offsets = [(-10, -8), (10, 8)]
+        offsets = [(-10, -8), (10, 8), (10, 2)]
         for i, p in enumerate(self.players):
             p.draw(SCREEN, self.board, offsets[i])
 
